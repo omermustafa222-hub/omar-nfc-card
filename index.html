@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050505">
+<meta name="description" content="البطاقة الرقمية لعمر مصطفى - مدير التشغيل في شركة الوسيلة الذكية للخدمات اللوجستية">
+<title>عمر مصطفى | Omar Mustafa</title>
+<style>
+:root{
+  --bg:#050505;--card:#101010;--line:#292929;--text:#f5f5f5;--muted:#a8a8a8;
+  --gold:#d7b56d;--gold2:#f0d99b;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;background:radial-gradient(circle at top,#1a1a1a 0,#080808 38%,#030303 100%);
+  color:var(--text);font-family:Arial,"Noto Sans Arabic",sans-serif;min-height:100vh;
+}
+.wrap{width:min(460px,100%);margin:auto;padding:22px 16px 34px}
+.card{
+  position:relative;overflow:hidden;background:linear-gradient(145deg,#141414,#090909);
+  border:1px solid var(--line);border-radius:28px;padding:30px 20px;
+  box-shadow:0 20px 70px #000;
+}
+.card:before{
+  content:"";position:absolute;width:180px;height:180px;border-radius:50%;
+  background:var(--gold);opacity:.08;filter:blur(45px);top:-80px;left:-50px
+}
+.brand{font-size:12px;letter-spacing:2px;color:var(--gold);text-align:center;margin-bottom:28px}
+.avatar{
+  width:92px;height:92px;border-radius:50%;margin:auto;border:1px solid #51452d;
+  display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:bold;
+  color:var(--gold2);background:linear-gradient(145deg,#242424,#0b0b0b);
+}
+h1{text-align:center;margin:18px 0 5px;font-size:28px}
+.en{text-align:center;color:var(--muted);font-size:17px}
+.role{text-align:center;color:var(--gold2);margin-top:12px;font-size:15px}
+.company{text-align:center;margin-top:8px;font-size:14px;line-height:1.7}
+.divider{height:1px;background:var(--line);margin:25px 0}
+.info{display:grid;gap:11px}
+.info a{
+  display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text);
+  border:1px solid var(--line);background:#0d0d0d;border-radius:15px;padding:14px;
+  transition:.2s
+}
+.info a:hover{border-color:#62512f;transform:translateY(-1px)}
+.icon{width:35px;height:35px;border-radius:10px;background:#181818;display:grid;place-items:center;color:var(--gold);font-size:17px}
+.label{font-size:11px;color:var(--muted);margin-bottom:3px}.value{font-size:14px;direction:ltr;text-align:right}
+.location{direction:rtl}
+.buttons{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:16px}
+.btn{
+  padding:14px 10px;border-radius:14px;text-decoration:none;text-align:center;font-weight:bold;
+  border:1px solid #5e4d2e;background:linear-gradient(145deg,#1d1a14,#0e0e0e);color:var(--gold2)
+}
+.btn.secondary{border-color:var(--line);background:#0d0d0d;color:var(--text)}
+.footer{text-align:center;color:#666;font-size:11px;margin-top:24px}
+.lang{display:flex;justify-content:center;margin-bottom:15px}
+.lang button{
+  border:1px solid var(--line);background:#0c0c0c;color:var(--muted);padding:7px 14px;
+  border-radius:20px;cursor:pointer
+}
+.lang button.active{color:var(--gold2);border-color:#5e4d2e}
+body.en-mode{direction:ltr}
+body.en-mode .value{direction:ltr;text-align:left}
+@media(max-width:360px){h1{font-size:24px}.buttons{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <section class="card">
+    <div class="lang">
+      <button id="arBtn" class="active" onclick="setLang('ar')">العربية</button>
+      <button id="enBtn" onclick="setLang('en')">English</button>
+    </div>
+
+    <div class="brand">SMART WAY LOGISTICS</div>
+    <div class="avatar">ع م</div>
+
+    <h1 id="name">عمر مصطفى</h1>
+    <div class="en" id="nameEn">Omar Mustafa</div>
+    <div class="role" id="role">مدير التشغيل</div>
+    <div class="company" id="company">شركة الوسيلة الذكية للخدمات اللوجستية<br>الرياض، المملكة العربية السعودية</div>
+
+    <div class="divider"></div>
+
+    <div class="info">
+      <a href="tel:+966544041914">
+        <span class="icon">☎</span>
+        <span><div class="label" id="phoneLabel">الهاتف</div><div class="value">0544041914</div></span>
+      </a>
+
+      <a href="mailto:thesmartway@info.sa">
+        <span class="icon">✉</span>
+        <span><div class="label" id="emailLabel">البريد الإلكتروني</div><div class="value">thesmartway@info.sa</div></span>
+      </a>
+
+      <a href="https://maps.app.goo.gl/5fuDHimbnk1xTG9A6" target="_blank" rel="noopener">
+        <span class="icon">⌖</span>
+        <span><div class="label" id="locationLabel">الموقع</div><div class="value location">الرياض</div></span>
+      </a>
+    </div>
+
+    <div class="buttons">
+      <a class="btn" href="tel:+966544041914" id="callBtn">اتصال</a>
+      <a class="btn" href="mailto:thesmartway@info.sa" id="mailBtn">إرسال بريد</a>
+      <a class="btn secondary" href="https://maps.app.goo.gl/5fuDHimbnk1xTG9A6" target="_blank" rel="noopener" id="mapBtn">فتح الموقع</a>
+      <a class="btn secondary" href="#" onclick="downloadVCard();return false" id="saveBtn">حفظ جهة الاتصال</a>
+    </div>
+
+    <div class="footer">Digital Business Card • NFC Ready</div>
+  </section>
+</main>
+
+<script>
+const data={
+  ar:{name:"عمر مصطفى",nameEn:"Omar Mustafa",role:"مدير التشغيل",
+  company:"شركة الوسيلة الذكية للخدمات اللوجستية<br>الرياض، المملكة العربية السعودية",
+  phone:"الهاتف",email:"البريد الإلكتروني",location:"الموقع",call:"اتصال",
+  mail:"إرسال بريد",map:"فتح الموقع",save:"حفظ جهة الاتصال"},
+  en:{name:"Omar Mustafa",nameEn:"Omar Mustafa",role:"Operations Manager",
+  company:"Smart Way Logistics Company<br>Riyadh, Saudi Arabia",
+  phone:"Phone",email:"Email",location:"Location",call:"Call",
+  mail:"Email",map:"Open Location",save:"Save Contact"}
+};
+function setLang(lang){
+  const d=data[lang];
+  document.documentElement.lang=lang;
+  document.body.classList.toggle("en-mode",lang==="en");
+  document.body.dir=lang==="ar"?"rtl":"ltr";
+  document.getElementById("name").textContent=d.name;
+  document.getElementById("nameEn").textContent=lang==="ar"?"Omar Mustafa":"Omar Mustafa";
+  document.getElementById("role").textContent=d.role;
+  document.getElementById("company").innerHTML=d.company;
+  document.getElementById("phoneLabel").textContent=d.phone;
+  document.getElementById("emailLabel").textContent=d.email;
+  document.getElementById("locationLabel").textContent=d.location;
+  document.getElementById("callBtn").textContent=d.call;
+  document.getElementById("mailBtn").textContent=d.mail;
+  document.getElementById("mapBtn").textContent=d.map;
+  document.getElementById("saveBtn").textContent=d.save;
+  document.getElementById("arBtn").classList.toggle("active",lang==="ar");
+  document.getElementById("enBtn").classList.toggle("active",lang==="en");
+}
+function downloadVCard(){
+  const vcard=`BEGIN:VCARD
+VERSION:3.0
+FN:Omar Mustafa
+N:Mustafa;Omar;;;
+TITLE:Operations Manager
+ORG:Smart Way Logistics Company
+TEL;TYPE=CELL:+966544041914
+EMAIL:thesmartway@info.sa
+ADR;TYPE=WORK:;;Riyadh;;;Saudi Arabia
+END:VCARD`;
+  const blob=new Blob([vcard],{type:"text/vcard;charset=utf-8"});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement("a");a.href=url;a.download="Omar-Mustafa.vcf";a.click();
+  URL.revokeObjectURL(url);
+}
+</script>
+</body>
+</html>
